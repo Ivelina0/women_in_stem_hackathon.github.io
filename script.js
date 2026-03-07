@@ -88,8 +88,13 @@ function initProjectsCohortPicker() {
 
     kittensGallery.hidden = !showKittens;
     lionessesGallery.hidden = showKittens;
+    kittensGallery.classList.toggle("is-hidden", !showKittens);
+    lionessesGallery.classList.toggle("is-hidden", showKittens);
+
     pickMessage.hidden = true;
+    pickMessage.classList.add("is-hidden");
     tools.hidden = false;
+    tools.classList.remove("is-hidden");
 
     setSelectedButtonState(cohort);
 
@@ -101,8 +106,14 @@ function initProjectsCohortPicker() {
   function resetSelection() {
     kittensGallery.hidden = true;
     lionessesGallery.hidden = true;
+    kittensGallery.classList.add("is-hidden");
+    lionessesGallery.classList.add("is-hidden");
+
     pickMessage.hidden = false;
+    pickMessage.classList.remove("is-hidden");
     tools.hidden = true;
+    tools.classList.add("is-hidden");
+
     selectedText.textContent = "";
     setSelectedButtonState(null);
   }
@@ -121,6 +132,9 @@ function initProjectsCohortPicker() {
   });
 
   chooseAgainBtn?.addEventListener("click", resetSelection);
+
+  // Guarantee initial state: no cohort gallery shown until user chooses.
+  resetSelection();
 }
 
 initCountdown();

@@ -513,6 +513,11 @@ h1 {
   padding: 1.2rem 0 3rem;
 }
 
+.projects-page .is-hidden,
+.projects-page [hidden] {
+  display: none !important;
+}
+
 .projects-intro {
   background: linear-gradient(150deg, var(--brand-yellow), #fff);
   margin-top: 0.4rem;
@@ -658,8 +663,13 @@ h1 {
   background: linear-gradient(145deg, #d8eeff, #f9fdff);
 }
 
+.wildcard-tone {
+  background: linear-gradient(145deg, #fff6ea, #fff0f7);
+}
+
 .build-your-own {
   border-style: dashed;
+  border-color: #8b6a8f;
 }
 
 .tag-row {
