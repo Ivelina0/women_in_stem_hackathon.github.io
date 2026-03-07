@@ -129,6 +129,22 @@ h1 {
   font-size: clamp(1rem, 2.3vw, 1.25rem);
 }
 
+.hero-subtitle {
+  margin: 0.25rem auto 0.55rem;
+  max-width: 42ch;
+  font-size: clamp(1.12rem, 2.1vw, 1.5rem);
+  font-weight: 700;
+}
+
+/* Homepage-only width controls for cleaner desktop layout */
+.home-main {
+  width: min(980px, 92vw);
+}
+
+.home-main > section {
+  margin-inline: auto;
+}
+
 .sticker,
 .timeline-section {
   margin: 1.2rem 0 2rem;
@@ -229,7 +245,20 @@ h1 {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
+  table-layout: fixed;
   min-width: 640px;
+}
+
+.timeline-col-time {
+  width: 23%;
+}
+
+.timeline-col-activity {
+  width: 52%;
+}
+
+.timeline-col-location {
+  width: 25%;
 }
 
 .timeline-table th,
@@ -278,6 +307,7 @@ h1 {
 .timeline-table td:last-child {
   font-weight: 700;
   color: #5f5188;
+  white-space: nowrap;
 }
 
 .timeline-list {
@@ -330,8 +360,10 @@ h1 {
 
 .organiser-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 1rem;
+  max-width: 920px;
+  margin-inline: auto;
 }
 
 .organiser-card {
@@ -339,7 +371,12 @@ h1 {
   background: #fff;
   border: 2px solid #5f5188;
   border-radius: 16px;
-  padding: 0.8rem;
+  padding: 1rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.35rem;
 }
 
 .organiser-card img {
@@ -352,8 +389,8 @@ h1 {
 }
 
 .organiser-card .organiser-avatar {
-  width: 120px;
-  height: 120px;
+  width: clamp(120px, 10vw, 150px);
+  height: clamp(120px, 10vw, 150px);
   object-fit: cover;
   border-radius: 50%;
   display: block;
@@ -362,7 +399,7 @@ h1 {
 
 .organiser-card h3 {
   font-size: 1.35rem;
-  margin: 0.7rem 0 0.4rem;
+  margin: 0.45rem 0 0.2rem;
 }
 
 .organiser-card a {
@@ -397,6 +434,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(2, minmax(240px, 1fr));
   gap: 1rem;
+  align-items: stretch;
 }
 
 .supporter-card {
@@ -406,13 +444,18 @@ h1 {
   padding: 1rem;
   text-align: center;
   box-shadow: 0 7px 0 rgba(95, 81, 136, 0.16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .supporter-card img {
   display: block;
-  width: min(100%, 320px);
+  width: min(100%, 280px);
   max-width: 100%;
+  max-height: 185px;
   height: auto;
+  object-fit: contain;
   margin: 0 auto 0.8rem;
   border-radius: 14px;
   border: 2px dashed #a491c5;
@@ -426,6 +469,7 @@ h1 {
 
 .supporter-card p {
   margin-top: 0;
+  max-width: 42ch;
 }
 
 .supporter-link {
@@ -453,11 +497,25 @@ h1 {
   .supporters-grid {
     grid-template-columns: 1fr;
   }
+
+  .organiser-grid {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
 }
 
 @media (max-width: 540px) {
   .countdown-grid {
     grid-template-columns: repeat(2, minmax(70px, 1fr));
+  }
+
+  .organiser-card .organiser-avatar {
+    width: 116px;
+    height: 116px;
+  }
+
+  .timeline-table td,
+  .timeline-table th {
+    font-size: 0.95rem;
   }
 }
 
@@ -497,6 +555,7 @@ h1 {
   .timeline-table td {
     border: 0;
     padding: 0.25rem 0.75rem;
+    white-space: normal;
   }
 
   .timeline-table td::before {
