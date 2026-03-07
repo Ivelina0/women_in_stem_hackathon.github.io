@@ -218,6 +218,68 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.timeline-table-wrap {
+  border: 2px dashed #c9b9dd;
+  border-radius: 16px;
+  background: #fff;
+  overflow-x: auto;
+}
+
+.timeline-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 640px;
+}
+
+.timeline-table th,
+.timeline-table td {
+  padding: 0.75rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.timeline-table thead th {
+  background: linear-gradient(140deg, var(--brand-yellow), #fff8cf);
+  font-size: 1.02rem;
+  border-bottom: 2px solid #d6c6e7;
+}
+
+.timeline-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.timeline-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.timeline-table tbody tr:nth-child(odd) {
+  background: #fffdf6;
+}
+
+.timeline-table tbody tr:nth-child(even) {
+  background: #fbf8ff;
+}
+
+.timeline-table tbody td {
+  border-bottom: 1px dashed #dfd2eb;
+}
+
+.timeline-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.timeline-table td:first-child {
+  font-weight: 800;
+  color: #4f3f74;
+  white-space: nowrap;
+}
+
+.timeline-table td:last-child {
+  font-weight: 700;
+  color: #5f5188;
+}
+
 .timeline-list {
   margin: 0;
   padding: 0;
@@ -289,6 +351,15 @@ h1 {
   background: #f4f0ff;
 }
 
+.organiser-card .organiser-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin-inline: auto;
+}
+
 .organiser-card h3 {
   font-size: 1.35rem;
   margin: 0.7rem 0 0.4rem;
@@ -315,6 +386,51 @@ h1 {
 @media (max-width: 540px) {
   .countdown-grid {
     grid-template-columns: repeat(2, minmax(70px, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .timeline-table {
+    min-width: 0;
+  }
+
+  .timeline-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .timeline-table tbody,
+  .timeline-table tr,
+  .timeline-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .timeline-table tr {
+    border-bottom: 2px dashed #dfd2eb;
+    padding: 0.65rem 0;
+  }
+
+  .timeline-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .timeline-table td {
+    border: 0;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .timeline-table td::before {
+    content: attr(data-label) ": ";
+    font-weight: 800;
+    color: #4f3f74;
   }
 }
 
