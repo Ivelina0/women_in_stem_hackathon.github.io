@@ -1,0 +1,270 @@
+:root {
+  --bg: #fff9f2;
+  --ink: #3d2b56;
+  --pink: #ffd7e7;
+  --lavender: #e6ddff;
+  --mint: #d7f7e7;
+  --peach: #ffe5c7;
+  --sky: #d9f2ff;
+  --accent: #ff7ab6;
+  --accent-2: #7f77ff;
+  --paper-shadow: 0 12px 0 rgba(98, 79, 132, 0.12), 0 20px 40px rgba(50, 27, 88, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 20% 5%, #fff6db 0, transparent 30%),
+    radial-gradient(circle at 90% 25%, #ffe0f1 0, transparent 30%),
+    radial-gradient(circle at 10% 80%, #d9f3ff 0, transparent 35%),
+    var(--bg);
+  line-height: 1.45;
+}
+
+.paper-texture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.18;
+  background-image: radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.wrapper {
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 2.3rem 0 1.6rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0;
+  padding: 0.35rem 0.9rem;
+  background: var(--mint);
+  border: 2px dashed #82b8a0;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Patrick Hand", cursive;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  margin: 0.8rem 0 0.5rem;
+}
+
+.hero-copy {
+  margin: 0 auto;
+  max-width: 40ch;
+  font-size: clamp(1rem, 2.3vw, 1.25rem);
+}
+
+.sticker,
+.timeline-section {
+  margin: 1.2rem 0 2rem;
+  border: 3px solid #6a567f;
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: var(--paper-shadow);
+  padding: clamp(1rem, 2.5vw, 1.8rem);
+  position: relative;
+}
+
+.sticker::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 66px;
+  height: 20px;
+  transform: rotate(8deg);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(86, 66, 122, 0.2);
+  border-radius: 4px;
+}
+
+.countdown-block {
+  background: linear-gradient(140deg, var(--pink), var(--lavender));
+}
+
+.countdown-label {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  margin: 0 0 0.9rem;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(70px, 1fr));
+  gap: clamp(0.55rem, 1.2vw, 1rem);
+}
+
+.time-bubble {
+  background: #fff;
+  border-radius: 18px;
+  border: 2px solid #6a567f;
+  text-align: center;
+  padding: 0.8rem 0.4rem;
+}
+
+.time-value {
+  display: block;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #52379b;
+  line-height: 1;
+}
+
+.time-unit {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.countdown-message {
+  margin: 1rem 0 0;
+  font-size: clamp(1.2rem, 2.8vw, 1.9rem);
+  font-weight: 800;
+  color: #843056;
+}
+
+.countdown-note {
+  margin: 0.7rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.timeline-section {
+  background: linear-gradient(180deg, #ffffff, #fffdf8);
+}
+
+.timeline-section:nth-of-type(2) {
+  background: linear-gradient(180deg, #fefcff, #f8fcff);
+}
+
+.timeline-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.timeline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.timeline-list li {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) 1fr;
+  align-items: start;
+  gap: 0.9rem;
+  padding: 0.8rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 2px dashed #d6cae6;
+}
+
+.time-tag {
+  display: inline-block;
+  background: var(--peach);
+  border: 2px solid #d5a777;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.timeline-list p {
+  margin: 0.1rem 0 0;
+}
+
+.organisers-section {
+  background: linear-gradient(140deg, var(--sky), var(--mint));
+  margin-bottom: 3rem;
+}
+
+.organisers-section h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.35rem);
+  margin-bottom: 0.4rem;
+}
+
+.organiser-intro {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.organiser-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+}
+
+.organiser-card {
+  text-align: center;
+  background: #fff;
+  border: 2px solid #5f5188;
+  border-radius: 16px;
+  padding: 0.8rem;
+}
+
+.organiser-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 2px dashed #a491c5;
+  border-radius: 12px;
+  background: #f4f0ff;
+}
+
+.organiser-card h3 {
+  font-size: 1.35rem;
+  margin: 0.7rem 0 0.4rem;
+}
+
+.organiser-card a {
+  color: var(--accent-2);
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.organiser-card a:hover,
+.organiser-card a:focus-visible {
+  color: var(--accent);
+}
+
+@media (max-width: 800px) {
+  .timeline-list li {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .countdown-grid {
+    grid-template-columns: repeat(2, minmax(70px, 1fr));
+  }
+}

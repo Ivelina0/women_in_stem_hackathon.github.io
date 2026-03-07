@@ -3,107 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vivid in STEM Hackathon</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-    }
-    header {
-      padding: 24px;
-      background: #1e293b;
-      text-align: center;
-    }
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 32px 20px;
-    }
-    .card {
-      background: #1e293b;
-      padding: 24px;
-      border-radius: 16px;
-      margin-bottom: 20px;
-    }
-    button {
-      background: #8b5cf6;
-      color: white;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .modal {
-      background: #1e293b;
-      max-width: 600px;
-      width: 100%;
-      padding: 24px;
-      border-radius: 16px;
-    }
-    textarea, input {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      margin-bottom: 12px;
-      border-radius: 10px;
-      border: none;
-    }
-  </style>
+  <title>International Women's Day Hackathon 2026</title>
+  <meta name="description" content="International Women's Day Hackathon 2026 schedule, countdown, and organiser info." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Vivid in STEM Hackathon</h1>
-    <p>Welcome to our event website</p>
+  <div class="paper-texture" aria-hidden="true"></div>
+
+  <header class="hero wrapper">
+    <p class="eyebrow">International Women's Day Hackathon 2026</p>
+    <h1>Maths + Computing + Big Ideas 💡</h1>
+    <p class="hero-copy">2 days of beginner-friendly teamwork, playful prototyping, and real-world problem solving.</p>
   </header>
 
-  <main>
-    <div class="card">
-      <h2>About</h2>
-      <p>This is the first version of our hackathon website. We’ll add schedule, project ideas, announcements, and submission details here.</p>
-      <button onclick="openModal()">Important Update</button>
-    </div>
+  <main class="wrapper">
+    <section class="countdown-block sticker" aria-labelledby="countdown-label">
+      <p id="countdown-label" class="countdown-label">Time until presentations</p>
 
-    <div class="card">
-      <h2>Ask a question</h2>
-      <input type="text" placeholder="Your name">
-      <textarea placeholder="Your question"></textarea>
-      <button>Submit</button>
-    </div>
+      <div class="countdown-grid" aria-live="polite" aria-atomic="true">
+        <div class="time-bubble">
+          <span class="time-value" id="days">00</span>
+          <span class="time-unit">Days</span>
+        </div>
+        <div class="time-bubble">
+          <span class="time-value" id="hours">00</span>
+          <span class="time-unit">Hours</span>
+        </div>
+        <div class="time-bubble">
+          <span class="time-value" id="minutes">00</span>
+          <span class="time-unit">Minutes</span>
+        </div>
+        <div class="time-bubble">
+          <span class="time-value" id="seconds">00</span>
+          <span class="time-unit">Seconds</span>
+        </div>
+      </div>
 
-    <div class="card">
-      <h2>Comments</h2>
-      <textarea placeholder="Leave a comment"></textarea>
-      <button>Post comment</button>
-    </div>
+      <p id="countdown-message" class="countdown-message" hidden>Presentations are now live!</p>
+      <p class="countdown-note">Countdown target: 11 March, 2:30 PM</p>
+    </section>
+
+    <section class="timeline-section">
+      <h2>Day 1 Timeline — Introduction, Teams &amp; Hacking</h2>
+      <ul class="timeline-list" aria-label="Day 1 schedule">
+        <li>
+          <span class="time-tag">9:00 AM</span>
+          <p>Arrival and Team Formation (SMS Basement)</p>
+        </li>
+        <li>
+          <span class="time-tag">9:30 – 10:25 AM</span>
+          <p>Talk: <em>Collaborating with Others Using Git</em> (MB-503)</p>
+        </li>
+        <li>
+          <span class="time-tag">10:30 – 11:25 AM</span>
+          <p>Talk: <em>Intro to Vibe Coding</em> (MB-503)</p>
+        </li>
+        <li>
+          <span class="time-tag">11:30 AM</span>
+          <p>Break</p>
+        </li>
+        <li>
+          <span class="time-tag">12:00 – 1:00 PM</span>
+          <p>Talk: <em>Python for Absolute Beginners</em> (Optional) OR Start Hacking</p>
+        </li>
+        <li>
+          <span class="time-tag">1:00 PM</span>
+          <p>Lunch (provided)</p>
+        </li>
+        <li>
+          <span class="time-tag">2:00 – 5:00 PM</span>
+          <p>First Hacking Session</p>
+        </li>
+        <li>
+          <span class="time-tag">5:00 PM</span>
+          <p>Focused Build Time + Snacks (optional)</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="timeline-section">
+      <h2>Day 2 Timeline — Hack, Build &amp; Present</h2>
+      <ul class="timeline-list" aria-label="Day 2 schedule">
+        <li>
+          <span class="time-tag">9:00 AM</span>
+          <p>Arrival and Day Debrief</p>
+        </li>
+        <li>
+          <span class="time-tag">9:30 – 12:00 PM</span>
+          <p>Second Hacking Session</p>
+        </li>
+        <li>
+          <span class="time-tag">11:00 – 12:00 PM</span>
+          <p>Guest Talk (TBC)</p>
+        </li>
+        <li>
+          <span class="time-tag">12:00 – 1:00 PM</span>
+          <p>Presentation Preparation</p>
+        </li>
+        <li>
+          <span class="time-tag">1:00 PM</span>
+          <p>Lunch</p>
+        </li>
+        <li>
+          <span class="time-tag">2:00 – 2:15 PM</span>
+          <p>Presentation Briefing</p>
+        </li>
+        <li>
+          <span class="time-tag">2:30 – 4:30 PM</span>
+          <p>Team Presentations (7 minutes presentation + 3 minutes Q&amp;A per team)</p>
+        </li>
+        <li>
+          <span class="time-tag">4:45 PM</span>
+          <p>Awards and Closing Remarks</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="organisers-section sticker" aria-labelledby="organisers-heading">
+      <h2 id="organisers-heading">Organisers</h2>
+      <p class="organiser-intro">A big thank-you to the people cheering everyone on behind the scenes.</p>
+
+      <!-- Easy to edit: replace name, image URL and profile link for each organiser card. -->
+      <div class="organiser-grid">
+        <article class="organiser-card">
+          <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Organiser+One" alt="Portrait of Organiser One" loading="lazy" />
+          <h3>Organiser One</h3>
+          <a href="https://www.qmul.ac.uk/" target="_blank" rel="noopener noreferrer">Profile Link</a>
+        </article>
+
+        <article class="organiser-card">
+          <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Organiser+Two" alt="Portrait of Organiser Two" loading="lazy" />
+          <h3>Organiser Two</h3>
+          <a href="https://www.qmul.ac.uk/" target="_blank" rel="noopener noreferrer">Profile Link</a>
+        </article>
+
+        <article class="organiser-card">
+          <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Organiser+Three" alt="Portrait of Organiser Three" loading="lazy" />
+          <h3>Organiser Three</h3>
+          <a href="https://www.qmul.ac.uk/" target="_blank" rel="noopener noreferrer">Profile Link</a>
+        </article>
+
+        <article class="organiser-card">
+          <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Organiser+Four" alt="Portrait of Organiser Four" loading="lazy" />
+          <h3>Organiser Four</h3>
+          <a href="https://www.qmul.ac.uk/" target="_blank" rel="noopener noreferrer">Profile Link</a>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <div class="modal-backdrop" id="modal">
-    <div class="modal">
-      <h2>Important Announcement</h2>
-      <p>You can use this pop-up for deadlines, room changes, reminders, and updates.</p>
-      <button onclick="closeModal()">Close</button>
-    </div>
-  </div>
-
-  <script>
-    function openModal() {
-      document.getElementById('modal').style.display = 'flex';
-    }
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
