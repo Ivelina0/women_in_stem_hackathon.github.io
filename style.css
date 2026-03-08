@@ -318,6 +318,17 @@ h1 {
   display: none;
 }
 
+/* Explicit desktop visibility rules */
+@media (min-width: 761px) {
+  .timeline-desktop {
+    display: block !important;
+  }
+
+  .timeline-mobile {
+    display: none !important;
+  }
+}
+
 .timeline-mobile-card {
   border: 2px dashed #dfd2eb;
   border-radius: 14px;
@@ -551,11 +562,11 @@ h1 {
 
 @media (max-width: 760px) {
   .timeline-desktop {
-    display: none;
+    display: none !important;
   }
 
   .timeline-mobile {
-    display: block;
+    display: block !important;
   }
 }
 
