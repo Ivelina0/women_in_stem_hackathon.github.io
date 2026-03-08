@@ -141,8 +141,8 @@ function initProjectsCohortPicker() {
 // Resources page: cohort selection logic
 // ----------------------------------------
 function initResourcesCohortPicker() {
-  const kittensBtn = document.getElementById("kittens-btn");
-  const lionessesBtn = document.getElementById("lionesses-btn");
+  const kittensBtn = document.getElementById("kittens-btn") || document.querySelector('[data-resource-cohort="kittens"]');
+  const lionessesBtn = document.getElementById("lionesses-btn") || document.querySelector('[data-resource-cohort="lionesses"]');
   const switchButtons = document.querySelectorAll("[data-resource-switch]");
   const chooseAgainBtn = document.getElementById("resource-choose-again");
   const kittensResources = document.getElementById("kittens-resources");
@@ -170,14 +170,19 @@ function initResourcesCohortPicker() {
   function showCohort(cohort) {
     const showKittens = cohort === "kittens";
 
+    // Use both `hidden` and explicit display for reliability.
     kittensResources.hidden = !showKittens;
     lionessesResources.hidden = showKittens;
+    kittensResources.style.display = showKittens ? "grid" : "none";
+    lionessesResources.style.display = showKittens ? "none" : "grid";
     kittensResources.classList.toggle("is-hidden", !showKittens);
     lionessesResources.classList.toggle("is-hidden", showKittens);
 
     pickMessage.hidden = true;
+    pickMessage.style.display = "none";
     pickMessage.classList.add("is-hidden");
     tools.hidden = false;
+    tools.style.display = "block";
     tools.classList.remove("is-hidden");
 
     setSelectedButtonState(cohort);
@@ -190,12 +195,16 @@ function initResourcesCohortPicker() {
   function resetSelection() {
     kittensResources.hidden = true;
     lionessesResources.hidden = true;
+    kittensResources.style.display = "none";
+    lionessesResources.style.display = "none";
     kittensResources.classList.add("is-hidden");
     lionessesResources.classList.add("is-hidden");
 
     pickMessage.hidden = false;
+    pickMessage.style.display = "block";
     pickMessage.classList.remove("is-hidden");
     tools.hidden = true;
+    tools.style.display = "none";
     tools.classList.add("is-hidden");
 
     selectedText.textContent = "";
